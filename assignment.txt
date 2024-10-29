@@ -1,0 +1,59 @@
+
+# 1. two sum 
+class Solution(object):
+    def twoSum(self, nums, target):
+        a =[]
+        for i in nums:
+            for j in nums:
+                if i+j == target:
+                    a.append(nums.index(i))
+                    a.append(nums.index(j))
+                    break
+        return a
+        
+
+# 2. remove elements
+
+class Solution(object):
+    def removeElement(self, nums, val):
+        for i in nums:
+            if i == val:
+                del nums.index(i)
+                nums.append('_')
+        return nums
+
+
+
+# 3. next permutation
+
+class Solution(object):
+    def nextPermutation(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: None Do not return anything, modify nums in-place instead.
+        """
+        for i in nums:
+            if i in nums:
+                del nums.index(i)
+                nums.append(i)
+                break
+        return nums
+
+
+
+# 4. Find First and Last Position of Element in Sorted Array
+
+class Solution(object):
+    def searchRange(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        a= []
+        for i in nums:
+            if i in nums:
+                a.append(nums.index(i))
+        if a == []:
+            a.append(-1,-1)
+        return a
